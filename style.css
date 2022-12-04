@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+}
+
+.item {
+    align-self: stretch;
+}
