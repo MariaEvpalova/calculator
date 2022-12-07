@@ -1,17 +1,17 @@
 function add(a, b) {
-    return Number(a) + Number(b);
+    return parseFloat(a) + parseFloat(b);
 }
 
 function subtract(a, b) {
-    return Number(a) - Number(b);
+    return parseFloat(a) - parseFloat(b);
 }
 
 function multiply(a, b) {
-    return Number(a) * Number(b);
+    return parseFloat(a) * parseFloat(b);
 }
 
 function divide(a, b) {
-    return Number(a) / Number(b);
+    return parseFloat(a) / parseFloat(b);
 }
 
 function operate(a, operator, b) {
@@ -32,8 +32,6 @@ function operate(a, operator, b) {
 }
 
 function makeGrid() {
-    const container = document.querySelector('.container');
-    const display = container.querySelector('.display');
     display.classList.add('item');
     display.style.gridRow = '1 / 1';
     display.style.gridColumn = '1 / 5';
@@ -50,4 +48,18 @@ function makeGrid() {
     }
 }
 
+function addButtonContent(event) {
+    currentDigit += event.target.innerText;
+    inputDiv.innerText += event.target.innerText;
+}
+
+let currentDigit = '';
+
+const container = document.querySelector('.container');
+const display = container.querySelector('.display');
+const inputDiv = container.querySelector('.display .input');
+
 makeGrid();
+
+const numberButtons = Array.from(container.querySelectorAll('button.number'));
+numberButtons.forEach(button => button.addEventListener('click', addButtonContent));

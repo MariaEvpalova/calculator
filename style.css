@@ -1,7 +1,36 @@
-.container {
-    display: grid;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Secular+One&display=swap');
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.item {
+.container {
+    display: grid;
+    height: 640px;
+    width: 480px;
+    box-sizing: border-box;
+    background-color: lightgray;
+    padding: 32px;
+    border-radius: 32px;
+    gap: 8px;
+}
+
+.container .item {
     align-self: stretch;
+    border-radius: 24px;
+}
+
+.display {
+    text-align: right;
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    padding: 12px;
+}
+
+button {
+    font-family: 'Secular One', sans-serif;
+    border: none;
+    font-size: x-large;
 }
